@@ -1,0 +1,25 @@
+Authors:
+Joseph Kehoe
+Piotr Artman, C00220223
+
+Academic year: 2020/2021
+Description: Distributed and Concurrent Device Development, Lab1
+
+Project License:
+This work is licensed under the  Creative Commons Attribution-ShareAlike 4.0 International Licence.
+To view of this licence, visit http://creativecommons.org/licenses/by-sa/4.0/.
+
+How to run:
+
+1. Open terminal.
+2. Navigate to a folder with files (Lab1).
+3. Type command in terminal:  ./lab1
+
+List of files:
+ * main.cpp
+ * lab1
+ * helloThreads.cpp
+ * Makefile
+ * Makefile1
+ * Makefile2
+ * Makefile3

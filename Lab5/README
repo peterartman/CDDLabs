@@ -1,0 +1,22 @@
+Authors:
+Joseph Kehoe
+Piotr Artman, C00220223
+
+Academic year: 2020/2021
+Description: Distributed and Concurrent Device Development, Lab5
+
+Project License:
+This work is licensed under the  Creative Commons Attribution-ShareAlike 4.0 International Licence.
+To view of this licence, visit http://creativecommons.org/licenses/by-sa/4.0/.
+
+How to run:
+Type command in terminal:  ./lab5
+
+List of files:
+ * main.cpp
+ * lab5
+ * Barrier.cpp
+ * Barrier.h
+ * Makefile
+ * Semaphore.cpp
+ * Semaphore.h
