@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['taskone_16',['taskOne',['../main_8cpp.html#a2b4729d561c345111ccab970fe11e229',1,'main.cpp']]]
+  ['semaphore_17',['Semaphore',['../class_semaphore.html#a0d9290d316636875ca85d1d78950a817',1,'Semaphore']]],
+  ['signal_18',['Signal',['../class_semaphore.html#a86f92f738b4486439b296d8e235895f2',1,'Semaphore']]]
 ];

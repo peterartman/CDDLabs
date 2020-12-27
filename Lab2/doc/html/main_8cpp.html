@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Lab 2: Semaphores: code/main.cpp File Reference</title>
+<title>Lab Two - Signalling with Semaphores: code/main.cpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,9 +21,10 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Lab 2: Semaphores
+   <div id="projectname">Lab Two - Signalling with Semaphores
    &#160;<span id="projectnumber">1.0</span>
    </div>
+   <div id="projectbrief">Exercise in creating signalling using semaphores.</div>
   </td>
  </tr>
  </tbody>
@@ -73,7 +74,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>An implementation of threads using semafores.  
+<p>Lab2, an implementation of threads using semafores.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="_semaphore_8h_source.html">Semaphore.h</a>&quot;</code><br />
 <code>#include &lt;iostream&gt;</code><br />
@@ -89,25 +90,17 @@ Functions</h2></td></tr>
 <tr class="separator:a2b4729d561c345111ccab970fe11e229"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>An implementation of threads using semafores. </p>
+<div class="textblock"><p>Lab2, an implementation of threads using semafores. </p>
 <p>\mainapge Lab TWo</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">theSemaphore</td><td>this parameter is used for flow control </td></tr>
-    <tr><td class="paramname">delay</td><td>this integer is used to set duration of sleep for a thread </td></tr>
-    <tr><td class="paramname">taskOneDelay</td><td>this integere is used to set </td></tr>
-  </table>
-  </dd>
-</dl>
 <dl class="section author"><dt>Author</dt><dd>Joseph Kehoe, Piotr Artman </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>7 November 2020 </dd></dl>
-<dl class="section copyright"><dt>Copyright</dt><dd>Creative Commons Attributuion-ShareAlike 4.0 International Licence </dd></dl>
+<dl class="section copyright"><dt>Copyright</dt><dd>Creative Commons Attributuion-ShareAlike 4.0 International Licence, for more information visit <a href="http://creativecommons.org/licenses/by-sa/4.0/.">http://creativecommons.org/licenses/by-sa/4.0/.</a> </dd></dl>
 <h1><a class="anchor" id="desc_sec"></a>
 Description</h1>
-<p>This is file created for Lab 2.</p>
+<p>This is file is part of Lab 2 and contains code with implementation of threads by usig semafores.</p>
 <h1><a class="anchor" id="dep_sec"></a>
 Dependencies</h1>
-<p>This code depens on <a class="el" href="class_semaphore.html" title="A Semaphore Implementation.">Semaphore</a> header iostread library thread library unistd header </p>
+<p>This code depens on: "Semaphore.h" header, &lt;iostream&gt; library, &lt;thread&gt; libarary, &lt;unistd.h&gt; header </p>
 
 <p class="definition">Definition in file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 </div><h2 class="groupheader">Function Documentation</h2>
@@ -138,16 +131,19 @@ Dependencies</h1>
 </div><div class="memdoc">
 
 <p>This function will be executed after delay. </p>
+<p>This is task one to execute.</p>
 <p>displays a message first</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">delay</td><td>This integer is used to set duration of sleep </td></tr>
-    <tr><td class="paramname">theSemaphore</td><td>this parameter is used for flow control </td></tr>
+    <tr><td class="paramname">theSemaphore</td><td>this parameter is used for flow control</td></tr>
+    <tr><td class="paramname">int</td><td>delay is used to set duration delay betwen first and second task </td></tr>
+    <tr><td class="paramname">theSemaphore</td><td>pointer is used for flow control </td></tr>
   </table>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00040">40</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00033">33</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
 </div>
 </div>
