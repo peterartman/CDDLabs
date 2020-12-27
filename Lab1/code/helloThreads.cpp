@@ -1,8 +1,3 @@
-/*
- *This work is licensed under the  Creative Commons Attribution-ShareAlike 4.0 International Licence.
- *To view of this licence, visit http://creativecommons.org/licenses/by-sa/4.0/.
- */
-/
 /*! \mainapge Lab One
  * \file helloThreads.cpp
  * \brief A file for lab 1.
