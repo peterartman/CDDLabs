@@ -15,8 +15,8 @@
  * This code depens on:
  * "Semaphore.h" header,
  * <iostream> library,
- * <thread> libarary,
- * <unistd.h> header
+ * <thread> library,
+ * <unistd.h> header.
  */
 
 #include "Semaphore.h"

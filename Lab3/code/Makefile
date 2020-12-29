@@ -7,12 +7,11 @@
 CC=g++
 CFLAGS= -std=c++11 -pthread -O0
 CPPFLAGS= Semaphore.cpp main.cpp
-
 #This rule says that each .o file depends on a .cpp file of the same name
 %.o: %.cpp
 	$(CC) -c -o -pthread $@ $< $(CFLAGS) $(DEBUGFLAGS)
 
-ALL: main.o
+ALL:
 	$(CC) -o lab3 $(CPPFLAGS) $(CFLAGS) $(DEBUGFLAGS)
 
 DEBUG: DEBUGFLAGS = -DDEBUG
