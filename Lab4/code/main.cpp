@@ -1,15 +1,8 @@
-/*
-This work is licensed under the  Creative Commons Attribution-ShareAlike 4.0 International Licence.
-To view of this licence, visit http://creativecommons.org/licenses/by-sa/4.0/.
-
-*/
-/*! \mainapge Lab TWo
+/*! \mainapge Lab Four
  * \file main.cpp
- * \brief An implementation of threads using semafores
- * \param Semaphore This parameter is used for flow control
- * \param numUpdates This integer is used to set no of rendezvous
+ * \brief A program that demonstrates Mutual Exclusion using the Semaphore class.
  * \author Joseph Kehoe, Piotr Artman
- * \date 7 November 2020
+ * \date 28 DEC 2020
  * \copyright Creative Commons Attributuion-ShareAlike 4.0 International Licence
  * \section desc_sec Description
  * 
@@ -19,12 +12,10 @@ To view of this licence, visit http://creativecommons.org/licenses/by-sa/4.0/.
  *
  * This code depens on
  * Semaphore header
- * iostread library
+ * iostream library
  * thread library
  * vector library
  */
-
-
 
 #include "Semaphore.h"
 #include <iostream>
@@ -32,37 +23,29 @@ To view of this licence, visit http://creativecommons.org/licenses/by-sa/4.0/.
 #include <vector>
 
 
-static const int num_threads = 100;
-int sharedVariable=0;
+static const int num_threads = 100; /*!< Detailed description after the member */
 
+int sharedVariable=0; /*!< shared variable to update in mutaual exlusion exercise*/
 
-/*! \fn updateTask
- *  \brief An Implementation of Mutual Exclusion using Semaphores. 
- *  Uses C++11 features such as mutex and condition variables to implement an example of a rendezvous for threads 
-/*! displays a message that is split in to 2 sections to show how a rendezvous works*/
-/*!
-* \fn Update Task
-* @param Semaphore1
-* @param numUpdates
-*/
-void updateTask(std::shared_ptr<Semaphore> Semaphore1, int numUpdates){
-
- 
+void updateTask(std::shared_ptr<Semaphore> firstSemafore, int numUpdates){
   for(int i=0;i<numUpdates;i++){
-    //UPDATE SHARED VARIABLE HERE!
-    Semaphore1->Wait();
+    firstSemafore->Wait();
     sharedVariable++;
-    Semaphore1->Signal();
+    firstSemafore->Signal();
 
   }
   
 }
+/*! \fn updateTask 
+ *  \brief Displays a message that is split in to 2 sections to show how a rendezvous works
+ *  \param firstSemaphore is a semaphore used for mutual exclusion
+ *  \param numUpdates numUpdates contains an integer representing information on how many times sharedVariable have to be updated
+ */
 
 int main(void){
-  std::vector<std::thread> vt(num_threads);
-  std::shared_ptr<Semaphore> aSemaphore ( new Semaphore(1));
+  std::vector<std::thread> vt(num_threads); /*!< A vector structure initiated for number of threads */
+  std::shared_ptr<Semaphore> aSemaphore ( new Semaphore(1)); /*!< A semapore passed to ech thread  */
   /**< Launch the threads  */
-  int i=0;
   for(std::thread& t: vt){
     t=std::thread(updateTask, aSemaphore,1000);
   }
@@ -74,3 +57,7 @@ int main(void){
   std::cout << sharedVariable << std::endl;
   return 0;
 }
+
+/*! \fn main
+ *  \brief This function implements mutual exclusion and displays two 
+ */
