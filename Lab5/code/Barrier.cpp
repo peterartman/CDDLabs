@@ -1,11 +1,34 @@
-/*! \class Barrier
-  * \brief Reusabe barier class
-  * \author Piotr Artman
-  * \version $Revision: 1.0 $
-  * \date 20/10/2020
-*/
+/*! \mainapge Lab Five
+ * \file Barrier.cpp
+ * \brief Reusable Barier class
+ * \author Joseph Kehoe, Piotr Artman
+ * \date 30 DEC 2020
+ * \copyright This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or (at
+ * your option) any later version.
+ * 
+ * This program is distributed in the hope that it will be useful, but
+ * WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with GNU Emacs.  If not, see <http: *www.gnu.org/licenses/>.
+ * 
+ * \section desc_sec Description
+ * 
+ * This is file created for Lab 4.
+ * 
+ * \section dep_sec Dependencies
+ *
+ * This Reusable Barrier class depens on:
+ * Semaphore header
+ * Semaphore class
+ * Barrier header
+ * iostream library
+ */
 
-// Code:
 #include "Semaphore.h"
 #include "Barrier.h"
 #include <iostream>
@@ -21,9 +44,9 @@ Barrier::Barrier(int numThreads)
 {
     this->numThreads = numThreads;
     current_count = 0;
-    lock.reset(new Semaphore(1));
+    mutex.reset(new Semaphore(1));
     turnstileOne.reset(new Semaphore(0));
-    turnstileTwo.reset(new Semaphore(1));
+    turnstileTwo.reset(new Semaphore(0));
 }
 
 /** \brief Implementation of Barrier class destructor.
@@ -32,7 +55,7 @@ Barrier::Barrier(int numThreads)
       */
 Barrier::~Barrier()
 {
-    lock.reset();
+    mutex.reset();
     turnstileOne.reset();
     turnstileTwo.reset();
 }
@@ -41,16 +64,16 @@ Barrier::~Barrier()
       * This mehod forces all threads to wait 
       * until all threeds arrive.
       */
-void Barrier::phaseOne()
+void Barrier::phase1()
 {
-    lock->Wait();
+    mutex->Wait();
     ++current_count;
     if (current_count == numThreads)
     {
         turnstileTwo->Wait();
         turnstileOne->Signal();
     }
-    lock->Signal();
+    mutex->Signal();
     turnstileOne->Wait();
     turnstileOne->Signal();
 }
@@ -59,27 +82,22 @@ void Barrier::phaseOne()
       * This mehod forces all threads to wait 
       * until all threeds executed critical section.
       */
-void Barrier::phaseTwo()
+void Barrier::phase2()
 {
-    lock->Wait();
+    mutex->Wait();
     --current_count;
     if (current_count == 0)
     {
-        turnstileOne->Wait();
         turnstileTwo->Signal();
     }
-    lock->Signal();
+    mutex->Signal();
     turnstileTwo->Wait();
-    turnstileTwo->Signal();
-
 }
 
 void Barrier::wait()
 {
-    phaseOne();
-    phaseTwo();
+    phase1();
+    phase2();
 }
-    
-
-// 
+//
 // Barrier.cpp ends here
