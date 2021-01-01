@@ -11,7 +11,10 @@ This work is licensed under the  Creative Commons Attribution-ShareAlike 4.0 Int
 To view of this licence, visit http://creativecommons.org/licenses/by-sa/4.0/.
 
 How to run:
-Type command in terminal:  ./lab4
+
+1. Open terminal.
+2. Navigate to a folder with files (Lab4).
+3. Type command in terminal:  ./lab4
 
 List of files:
  * lab4
