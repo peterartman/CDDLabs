@@ -33,14 +33,13 @@ private:
   int numThreads;
   int current_count;
   std::shared_ptr<Semaphore> mutex;
-  std::shared_ptr<Semaphore> turnstileOne;
-  std::shared_ptr<Semaphore> turnstileTwo;
-;
+  std::shared_ptr<Semaphore> turnstile1;
+  std::shared_ptr<Semaphore> turnstile2;
 public:
   Barrier(int numThreads);
   virtual ~Barrier();
   void wait();
-  void phase1();
-  void phase2(); 
+  void phase_one();
+  void phase_two(); 
 };
 /* Barrier.h ends here */

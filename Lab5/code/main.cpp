@@ -3,34 +3,37 @@
 #include <thread>
 #include <vector>
 
+
 static const int num_threads = 100;
 int sharedVariable=0;
+
 
 /*! \fn barrierTask
     \brief An example of using a reusable barrier
 */
 /*! displays a message that is split in to 2 sections to show how a rendezvous works*/
-void barrierTask(std::shared_ptr<Barrier> BarrierInTask, int numLoops){
+void barrierTask(std::shared_ptr<Barrier> theBarrier, int numLoops){
 
-  for(int i=0;i<numLoops;++i){
+
+
+for(int i=0;i<numLoops;++i){
     //Do first bit of task
-    std::cout << "A"<< i;
+    std::cout << "A"<< i ;
     //Barrier
-    BarrierInTask->phase1();
+    theBarrier->phase_one();
     //Do second half of task
-    std::cout<< "B" << i;
-    BarrierInTask->phase2();
+    std::cout<< "B" << i ;
+    theBarrier->phase_two();
   }
 }
 
+
 int main(void){
-  const int num_threads = 50;
   std::vector<std::thread> vt(num_threads);
-  std::shared_ptr<Barrier> theBarrier( new Barrier(num_threads));
+  std::shared_ptr<Barrier> aBarrier( new Barrier(num_threads));
   /**< Launch the threads  */
-  // int i=0;
   for(std::thread& t: vt){
-    t=std::thread(barrierTask,theBarrier,10);
+    t=std::thread(barrierTask,aBarrier,10);
   }
   /**< Join the threads with the main thread */
   for (auto& v :vt){

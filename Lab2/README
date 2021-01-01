@@ -22,3 +22,10 @@ List of files:
  * Semaphore.cpp
  * Semaphore.h
  * signal.cpp
+ 
+How to open documentation for this software:
+
+1. Open file explorer or command line.
+2. Navigate to 'doc' folder
+3. Find index.html file inside 'doc' folder.
+3. Open index.html file in a web browser.
