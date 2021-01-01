@@ -11,7 +11,11 @@ This work is licensed under the  Creative Commons Attribution-ShareAlike 4.0 Int
 To view of this licence, visit http://creativecommons.org/licenses/by-sa/4.0/.
 
 How to run:
-Type command in terminal:  ./helloThreads
+
+1. Open terminal.
+2. Navigate to a folder with files (Lab6).
+3. Open folder 'code'.
+4. Type command in terminal:  ./lab6 .
 
 List of files:
  * main.cpp
@@ -22,3 +26,10 @@ List of files:
  * Makefile1
  * Makefile2
  * Makefile3
+
+ How to open documentation for this software:
+
+1. Open file explorer or command line.
+2. Navigate to 'doc' folder
+3. Find index.html file inside 'doc' folder.
+3. Open index.html file in a web browser.

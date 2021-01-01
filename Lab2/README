@@ -13,7 +13,8 @@ How to run:
 
 1. Open terminal.
 2. Navigate to a folder with files (Lab2).
-3. Type command in terminal:  ./lab2
+3. Open folder 'code'.
+4. Type command in terminal:  ./lab2 .
 
 List of files:
  * main.cpp

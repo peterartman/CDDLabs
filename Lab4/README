@@ -14,7 +14,8 @@ How to run:
 
 1. Open terminal.
 2. Navigate to a folder with files (Lab4).
-3. Type command in terminal:  ./lab4
+3. Open folder 'code'.
+4. Type command in terminal:  ./lab4 .
 
 List of files:
  * lab4
